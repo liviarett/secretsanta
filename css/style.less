@@ -1,0 +1,109 @@
+// VARIABLES
+@red: rgb(244, 40, 40);
+@green: rgb(60, 200, 60);
+/* {
+border: 1px solid white;
+} */
+
+html, body {
+	background-color: @red;
+	width: 100%;
+	color: white;
+	font-family: "Roboto Condensed", Tahoma, sans-serif;
+	font-weight: 300;
+}
+
+h1 {
+	font-family: "Cabin Sketch";
+	font-weight: 700;
+	font-size: 4rem;
+	color: @green;
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+	color: fade(white, 80%);	
+}
+
+.input-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	div {
+		width: 30%;
+	}
+}
+
+.errorContainer {
+	font-size: 0.7rem;
+	margin-left: 1rem;
+}
+
+input[type="text"]::placeholder {
+	color: fade(white, 70%);
+}
+
+input[type="text"] {
+	background-color: @red * 0.8;
+	padding: 10px;
+	margin: 10px;
+	width: 90%;
+	color: white;
+	border: none;
+	text-align: left;
+	border-radius: 10px;
+	box-shadow: inner 0px 0px 20px blacK;
+	outline: none;
+}
+input:focus::-webkit-input-placeholder { color:transparent; }
+
+input:focus:-moz-placeholder { color:transparent; }
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0 0.5rem;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit !important;
+}
+
+.santaBtnContainer {
+	display: flex;
+	height: 100%;
+	width: auto !important;
+	margin: 1rem;
+}
+#santaList {
+	padding: 1rem 5%;
+	width: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	height: 40vh;
+	.listItem {
+		display: flex;
+		justify-content: space-between;
+		width: 27%;
+		margin: 0.4rem;
+		flex-shrink: 1;
+		overflow: scroll;	
+	}
+}
+button#render {
+	background: @red * 0.6;
+	padding: 1.1rem 2.8rem !important;
+	font-weight: 400;
+	font-size: 1.3rem;
+	margin: 0 auto;
+	border-radius: 20px;
+}
+
+.getSantasContainer {
+	display: flex;
+	justify-content: center;
+}

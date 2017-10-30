@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Secret Santa</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700|Roboto+Condensed:300,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+<h1>Welcome to Secret Santa!</h1>
+	<h2>Add Santas below!</h2>
+	<div class="input-container">
+		<div class="name">
+		<span class="errorContainer"></span>
+	    <input id="santaName" type="text" placeholder="Name" autofocus />
+		</div>
+		<div class="email">
+		<input id="santaEmail" type="text" placeholder="E-mail address" />
+		</div>
+		<div class="santaBtnContainer">
+	<button id="santaBtn">Send</button>
+		</div>
+		</div>
+	<div id="santaList">
+	</div>
+	<div class="getSantasContainer">
+	<button id="render">Get Santas!</button>
+	</div>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
