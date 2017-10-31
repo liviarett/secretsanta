@@ -15,8 +15,16 @@ $(document).ready(function (){
 	$('#render').click(function() {
 		renderSantas();
 		console.log(secretSantas);
+		$('#santaList').empty();		
+		for (santaIndex = 0; santaIndex < secretSantas.length; santaIndex++) {
+		var $name = secretSantas[santaIndex].name
+		var $match = secretSantas[santaIndex].match
+		$('#santaList').append("<p class='listItem'>" + toProperCase($name) + "'s match is " + toProperCase($match) + "</p>")
+		}
 	});
-	
+	$('i.fa-refresh').click(function(){
+		startOver();
+	})
 	// Delete Santa from listx1
 	$(document).on('click', '.deleteSanta', function() {
 		var $name = $(this).parent().attr("value");
@@ -60,7 +68,6 @@ $(document).ready(function (){
    return string;
 };
 
-
 	function renderSantas() {
 		console.log("Rendering Santas....");
 		var secretMatches = [];
@@ -87,5 +94,9 @@ $(document).ready(function (){
 			}
 		})
 		};
-	console.log(secretSantas);
+	
+	function startOver() {
+		secretSantas = [];
+		$('#santaList').empty();
+	};
 });
