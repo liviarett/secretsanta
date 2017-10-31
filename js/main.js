@@ -13,6 +13,9 @@ $(document).ready(function (){
   }
 });
 	$('#render').click(function() {
+		if (secretSantas.length == 0 || secretSantas.length == 1) {
+			return;
+		}
 		renderSantas();
 		console.log(secretSantas);
 		$('#santaList').empty();		
@@ -44,6 +47,10 @@ $(document).ready(function (){
 		var $name = $("#santaName").val().toLowerCase();
 		var $email = $("#santaEmail").val().toLowerCase();
 		$('.errorContainer').empty();
+		if ($name == "") {
+			$('.errorContainer').html('Please enter a valid name!');
+			return;
+		}
 		for (santaIndex = 0; santaIndex < secretSantas.length; santaIndex++) {
 			if ($name == secretSantas[santaIndex].name) {
 				$('.errorContainer').html('Name already on the list!');
@@ -71,7 +78,6 @@ $(document).ready(function (){
 	function renderSantas() {
 		console.log("Rendering Santas....");
 		var secretMatches = [];
-		
 		// Creating Matches
 		for (santaIndex = 0; santaIndex < secretSantas.length; santaIndex++) {
 			secretMatches.push(secretSantas[santaIndex]);
@@ -98,5 +104,6 @@ $(document).ready(function (){
 	function startOver() {
 		secretSantas = [];
 		$('#santaList').empty();
+		$('.errorContainer').empty();
 	};
 });

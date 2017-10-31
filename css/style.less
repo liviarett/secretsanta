@@ -5,6 +5,13 @@
 @teal: rgb(59, 133, 153);
 @grey: rgb(224, 224, 225);
 
+.transform (@rotate, @scale, @skew, @translate) {
+-webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+-moz-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+-o-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+-ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+}
 /* {
 border: 1px solid white;
 } */
@@ -82,6 +89,12 @@ button {
 	i.fa-chevron-down {
 		color: @darkblue;
 		font-size: 1.5rem;
+		&:hover {
+		color: fade(@darkblue, 80%);
+	}
+		&:active {
+		.transform(0, 0.9, 0deg, 0);
+	}
 	}
 }
 
@@ -137,6 +150,10 @@ button#render {
 	border-radius: 20px;
 	&:hover {
 		background: @red * 0.5;
+		color: fade(white, 85%);
+	}
+	&:active {
+		.transform(0, 0.95, 0deg, 0px);
 	}
 }
 
@@ -145,4 +162,10 @@ i.fa-refresh {
 	margin: 0 2rem;
 	cursor: pointer;
 	opacity: 0.8;
+	&:hover {
+		color: rgba(220, 220, 220, 0.9);
+	}
+	&:active {
+		.transform(90deg, 1, 0deg, 0px);
+	}
 }
