@@ -3,7 +3,7 @@ border: 1px solid white;
 } */
 html {
   background-color: #243553;
-  background-image: url(/images/winterbackground.jpg);
+  background-image: url('/images/winterbackground.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
 }
