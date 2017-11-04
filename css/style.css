@@ -7,6 +7,12 @@ html {
   background-repeat: no-repeat;
   background-size: 100%;
 }
+@media (max-width: 500px) {
+  html {
+    background-size: 200%;
+    background-position: top center;
+  }
+}
 html,
 body {
   width: 100%;
@@ -34,6 +40,11 @@ h2 {
 .input-container div {
   width: 25%;
 }
+@media (max-width: 500px) {
+  .input-container div {
+    width: 40%;
+  }
+}
 .errorContainer {
   font-size: 0.9rem;
   margin-left: 1rem;
@@ -53,6 +64,12 @@ input[type="text"] {
   border-radius: 10px;
   box-shadow: inner 0px 0px 20px blacK;
   outline: none;
+}
+@media (max-width: 500px) {
+  input[type="text"] {
+    background-color: rgba(36, 53, 83, 0.9);
+    width: 80%;
+  }
 }
 input:focus::-webkit-input-placeholder {
   color: transparent;
@@ -112,6 +129,11 @@ button i.fa-chevron-down:active {
   background-color: rgba(224, 224, 225, 0.8);
   border-radius: 10px;
 }
+@media (max-width: 500px) {
+  #santaList {
+    min-height: 30vh;
+  }
+}
 .getSantasContainer {
   width: 100%;
   display: flex;
@@ -142,6 +164,12 @@ button#render:active {
   -ms-transform: rotate(0) scale(0.95) skew(0deg) translate(0px);
   transform: rotate(0) scale(0.95) skew(0deg) translate(0px);
 }
+@media (max-width: 500px) {
+  button#render {
+    padding: 1.2rem !important;
+    width: 80%;
+  }
+}
 i.fa-refresh {
   font-size: 2.5rem;
   margin: 0 2rem;
@@ -157,4 +185,9 @@ i.fa-refresh:active {
   -o-transform: rotate(90deg) scale(1) skew(0deg) translate(0px);
   -ms-transform: rotate(90deg) scale(1) skew(0deg) translate(0px);
   transform: rotate(90deg) scale(1) skew(0deg) translate(0px);
+}
+@media (max-width: 500px) {
+  i.fa-refresh {
+    font-size: 2rem;
+  }
 }

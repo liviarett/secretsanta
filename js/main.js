@@ -106,4 +106,7 @@ $(document).ready(function (){
 		$('#santaList').empty();
 		$('.errorContainer').empty();
 	};
+	
+	// parameters: service_id, template_id, template_parameters
+// emailjs.send("default_service","<YOUR TEMPLATE ID>",{name: "James", notes: "Check this out!"});
 });

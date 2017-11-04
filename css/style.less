@@ -4,6 +4,7 @@
 @darkblue: rgb(36, 53, 83);
 @teal: rgb(59, 133, 153);
 @grey: rgb(224, 224, 225);
+@mobile: ~'(max-width: 500px)';
 
 .transform (@rotate, @scale, @skew, @translate) {
 -webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
@@ -20,6 +21,10 @@ html {
 	background-image: url(../images/winterbackground.jpg);
 	background-repeat: no-repeat;
 	background-size: 100%;
+	@media @mobile {
+		background-size: 200%;
+		background-position: top center;
+	}
 }
 
 html, body {
@@ -49,6 +54,9 @@ h2 {
 	align-items: flex-end;
 	div {
 		width: 25%;
+		@media @mobile {
+		width: 40%;
+	}
 	}
 }
 
@@ -73,6 +81,10 @@ input[type="text"] {
 	border-radius: 10px;
 	box-shadow: inner 0px 0px 20px blacK;
 	outline: none;
+	@media @mobile {
+		background-color: fade(@darkblue, 90%);
+		width: 80%;
+	}
 }
 input:focus::-webkit-input-placeholder { color:transparent; }
 
@@ -127,6 +139,9 @@ button {
 		background-color: fade(@grey, 80%);
 		border-radius: 10px;
 	}
+	@media @mobile {
+		min-height: 30vh;
+	}
 }
 
 .getSantasContainer {
@@ -155,6 +170,10 @@ button#render {
 	&:active {
 		.transform(0, 0.95, 0deg, 0px);
 	}
+	@media @mobile {
+		padding: 1.2rem !important;
+		width: 80%;
+	}
 }
 
 i.fa-refresh {
@@ -167,5 +186,8 @@ i.fa-refresh {
 	}
 	&:active {
 		.transform(90deg, 1, 0deg, 0px);
+	}
+	@media @mobile {
+		font-size: 2rem;
 	}
 }
