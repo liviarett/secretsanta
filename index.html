@@ -12,12 +12,6 @@
   <!-- Place favicon.ico in the root directory -->
   <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700|Roboto+Condensed:300,400" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("user_Bu7bL6slVucrj4pOHyhxt");
-   })();
-</script>
 </head>
 
 <body>
@@ -25,11 +19,12 @@
 	<h2>Add Santas below!</h2>
 	<div class="input-container">
 		<div class="name">
-		<span class="errorContainer"></span>
+		<span id="errorContainer1" class="errorContainer"></span>
 	    <input id="santaName" type="text" placeholder="Name" autofocus />
 		</div>
 		<div class="email">
-		<input id="santaEmail" type="text" placeholder="E-mail address" />
+		<span id="errorContainer2" class="errorContainer"></span>
+		<input id="santaEmail" type="email" placeholder="E-mail address" />
 		</div>
 		<div class="santaBtnContainer">
 	<button id="santaBtn"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
@@ -47,6 +42,8 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+	<script src="https://smtpjs.com/smtp.js">
+</script>
 	<script src="js/main.js"></script>
 </body>
 </html>
