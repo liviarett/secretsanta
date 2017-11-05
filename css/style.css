@@ -133,6 +133,11 @@ button i.fa-chevron-down:active {
   border-radius: 10px;
 }
 @media (max-width: 500px) {
+  #santaList .listItem {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
   #santaList {
     min-height: 30vh;
   }

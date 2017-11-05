@@ -138,6 +138,9 @@ button {
 		color: @darkblue;
 		background-color: fade(@grey, 80%);
 		border-radius: 10px;
+		@media @mobile {
+			width: 100%;
+		}
 	}
 	@media @mobile {
 		min-height: 30vh;
