@@ -55,10 +55,15 @@ $(document).ready(function (){
 		if (!validateEmail($email)) {
 			return;
 		};
+		$("#adminSantaEmail").empty();
 		sendAllSantas($email);
-		$('.lightbox').hide();
-		startOver();
+		$('.lightbox div button').remove();
+		$('.lightbox div').append('<button id="sendAllMatches">E-mail Sent <i class="fa fa-check" aria-hidden="true"></i></button>');
+		$('#sendAllMatches').css('cursor', 'auto')
+			
+			//.html('E-mail Sent <i class="fa fa-check" aria-hidden="true"></i>');
 	});
+	
 	// SANTAS
 	var secretSantas = [];
 	
@@ -142,7 +147,7 @@ $(document).ready(function (){
 		Email.send("ss.secretsanta.app@gmail.com",
 $email,
 "Your Secret Santa!",
-'<!doctype html><html class="no-js" lang="" style="padding: 0; margin: 0; background-color: rgb(36, 53, 83); background-image: url(http://liviarett.com/secretsanta/images/winterbackground.jpg); background-size: 100%; background-repeat: no-repeat; text-align: center; font-family: Helvetica;"><head><meta charset="UTF-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>Secret Santa</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>;@media (max-width: 600px) {h1 {font-size: 50px;padding: 10px;margin-bottom: 100px;} html{background-size: 200%;}}</style></head><body style="padding: 0; margin: 0;"><h1 style="margin: 0; font-size: 80px; font-weight: 400; padding: 70px; font-family: "Helvetica", sans-serif; color: rgb(36, 53, 83);">Your Secret Santa match is...</h1><p style="font-size: 30px; color: rgb(220, 220, 220); display: block; width: 100%; padding: 20px 0; margin: 0; background-color: #7a1414;">' + $match + '!</p></body></html>',
+'<!doctype html><html class="no-js" lang="" style="padding: 0; margin: 0; background-color: rgb(36, 53, 83); background-image: url(http://liviarett.com/secretsanta/images/winterbackground.jpg); background-size: 100%; background-repeat: no-repeat; text-align: center; font-family: Helvetica;"><head><meta charset="UTF-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>Secret Santa</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>;@media (max-width: 600px) {h1 {font-size: 50px;padding: 10px;margin-bottom: 100px;} html{background-size: 200%;}}</style></head><body style="padding: 0; margin: 0;"><h1 style="margin: 0; font-size: 80px; font-weight: 400; padding: 70px; font-family: "Helvetica", sans-serif; color: #7a1414;">Your Secret Santa match is...</h1><p style="font-size: 30px; color: rgb(220, 220, 220); display: block; width: 100%; padding: 20px 0; margin: 0; background-color: #7a1414;">' + toProperCase($match) + '!</p></body></html>',
 {token: "75c9d417-7cf1-4376-be10-2b1348b0a066"});
 	};
 
@@ -158,13 +163,12 @@ $email,
 	function sendAllSantas($email) {
 		var santaMatches = '';
 		for (santaIndex = 0; santaIndex < secretSantas.length; santaIndex++) {
-			santaMatches += '<p style="font-size: 30px; color: rgb(220, 220, 220); display: block; width: 100%; padding: 20px 0; margin: 0; background-color: #7a1414;"' + secretSantas[santaIndex].name + ' got ' + secretSantas[santaIndex].match + '!</p>';
+			santaMatches += '<p style="font-size: 30px; color: rgb(220, 220, 220); display: block; width: 100%; padding: 20px 0; margin: 0; background-color: #7a1414;">' + toProperCase(secretSantas[santaIndex].name) + ' got ' + toProperCase(secretSantas[santaIndex].match) + '</p>';
 		};
-		console.log(santaMatches);
 		Email.send("ss.secretsanta.app@gmail.com",
 $email,
 "The full list of Santas!",
-'<!doctype html><html class="no-js" lang="" style="padding: 0; margin: 0; background-color: rgb(36, 53, 83); background-image:url(http://liviarett.com/secretsanta/images/winterbackground.jpg); background-size: 100%; background-repeat: no-repeat; text-align: center; font-family: Helvetica;"><head><meta charset="UTF-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>Secret Santa</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>;@media (max-width: 600px) {h1 {font-size: 50px;padding: 10px;margin-bottom: 100px;} html{background-size: 200%;}}</style></head><body style="padding: 0; margin: 0;"><h1 style="margin: 0; font-size: 80px; font-weight: 400; padding: 70px; font-family: "Helvetica", sans-serif; color: rgb(36, 53, 83);">The Santas are...</h1>' + santaMatches + '</body></html>',
+'<!doctype html><html class="no-js" lang="" style="padding: 0; margin: 0; background-color: rgb(36, 53, 83); background-image:url(http://liviarett.com/secretsanta/images/winterbackground.jpg); background-size: 100%; background-repeat: no-repeat; text-align: center; font-family: Helvetica;"><head><meta charset="UTF-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>Secret Santa</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>;@media (max-width: 600px) {h1 {font-size: 50px;padding: 10px;margin-bottom: 100px;} html{background-size: 200%;}}</style></head><body style="padding: 0; margin: 0;"><h1 style="margin: 0; font-size: 80px; font-weight: 400; padding: 70px; font-family: Helvetica, sans-serif; color: #7a1414;">The Santas are...</h1>' + santaMatches.toString() + '</body></html>',
 {token: "75c9d417-7cf1-4376-be10-2b1348b0a066"});
 	};
 });

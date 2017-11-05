@@ -199,7 +199,7 @@ i.fa-refresh {
 	top: 0;
 	left: 0;
 	background-color: fade(white, 70%);
-	i {
+	i.fa-times {
 		color: @red * 0.6;
 		font-size: 1.9rem;
 		position: absolute;
@@ -229,9 +229,13 @@ i.fa-refresh {
 	width: 40%;
 	background-color: @darkblue;
 }
-button#sendAllMatches {
+button#sendAllMatches, button#matchesSent {
 	padding: 1rem !important;
 	margin: 2rem auto;
 	display: block;
 	font-size: 1rem;
+	i {
+	  padding: 0 0.4rem;
+      font-size: 1.3rem;
+	}
 }

@@ -206,7 +206,7 @@ i.fa-refresh:active {
   left: 0;
   background-color: rgba(255, 255, 255, 0.7);
 }
-.lightbox i {
+.lightbox i.fa-times {
   color: #921818;
   font-size: 1.9rem;
   position: absolute;
@@ -234,9 +234,15 @@ i.fa-refresh:active {
   width: 40%;
   background-color: #243553;
 }
-button#sendAllMatches {
+button#sendAllMatches,
+button#matchesSent {
   padding: 1rem !important;
   margin: 2rem auto;
   display: block;
   font-size: 1rem;
+}
+button#sendAllMatches i,
+button#matchesSent i {
+  padding: 0 0.4rem;
+  font-size: 1.3rem;
 }
